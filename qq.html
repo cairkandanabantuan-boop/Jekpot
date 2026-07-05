@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<title>KOPDESTOTO</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif}
+body{background:#0a0a0a;color:#fff;padding-bottom:70px}
+
+/* TOP BAR APLIKASI */
+.topbar{background:#000;padding:8px 10px;display:flex;align-items:center;justify-content:space-between}
+.topbar-left{display:flex;align-items:center;gap:8px}
+.topbar-left img{width:22px}
+.topbar-left h3{color:#FFD700;font-size:14px}
+.topbar-left p{font-size:10px;color:#ccc}
+.btn-download{background:#00C853;color:#fff;border:none;padding:6px 10px;border-radius:6px}
+.btn-close{background:#FF0000;color:#fff;border:none;padding:6px 10px;border-radius:6px}
+
+/* HEADER LOGO + LOGIN */
+.header{background:linear-gradient(to bottom,#2b0000,#0a0a0a);padding:10px;display:flex;align-items:center;justify-content:space-between}
+.logo{background:#fff;color:#8B0000;padding:5px 12px;border-radius:20px;font-weight:bold;font-size:16px;display:flex;align-items:center;gap:5px}
+.btn-group{display:flex;gap:8px}
+.btn-login{background:transparent;border:2px solid #FFD700;color:#FFD700;padding:6px 18px;border-radius:8px;font-weight:bold}
+.btn-daftar{background:linear-gradient(90deg,#FFD700,#FFA000);color:#000;padding:6px 18px;border-radius:8px;font-weight:bold;border:none}
+
+/* MARQUEE */
+.marquee{background:#111;padding:8px;color:#FFD700;font-size:13px;white-space:nowrap;overflow:hidden}
+.marquee span{display:inline-block;animation:scroll 15s linear infinite}
+@keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+
+/* SPIN HARIAN */
+.spin{background:#8B0000;display:flex;align-items:center;padding:10px;border-radius:10px;margin:10px;gap:10px}
+.spin img{width:40px}
+.spin h4{color:#FFD700}
+
+/* SEARCH */
+.search{margin:10px}
+.search input{width:100%;padding:10px;border-radius:20px;border:none;background:#1a1a1a;color:#fff;text-align:center}
+
+/* BANNER */
+.banner{margin:10px;border-radius:10px;overflow:hidden}
+.banner img{width:100%;display:block}
+
+/* KARTU PROMO */
+.promo-wrapper{display:flex;gap:10px;overflow-x:auto;padding:10px;scroll-snap-type:x mandatory}
+.promo-card{min-width:280px;background:#8B0000;border-radius:10px;padding:15px;scroll-snap-align:start}
+.promo-card h4{margin-bottom:10px}
+.btn-info{background:#00C853;color:#fff;border:none;padding:8px 15px;border-radius:20px;font-size:12px}
+
+/* TITLE */
+.title{padding:10px;font-weight:bold}
+
+/* NAV BAWAH */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#8B0000;display:flex;justify-content:space-around;padding:8px 0;border-top:2px solid #FFD700}
+.nav-item{text-align:center;color:#fff;font-size:10px}
+.nav-item img{width:24px;display:block;margin:0 auto 3px;filter:invert(1)}
+.nav-item.active{color:#FFD700}
+</style>
+<style>
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Banner Slide 15 Foto - KOPDESTOTO</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a}
+
+.slider{
+  position:relative;
+  width:100%;
+  max-width:600px;
+  margin:20px auto;
+  border-radius:12px;
+  overflow:hidden;
+  border:2px solid #FFD700;
+}
+
+.slides{
+  display:flex;
+  transition:transform 0.6s ease-in-out;
+}
+
+.slide{
+  min-width:100%;
+}
+.slide img{
+  width:100%;
+  display:block;
+}
+
+/* Dots / titik di bawah */
+.dots{
+  position:absolute;
+  bottom:10px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  max-width:90%;
+  justify-content:center;
+}
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.4);
+  cursor:pointer;
+  transition:0.3s;
+}
+.dot.active{background:#FFD700; transform:scale(1.3)}
+
+/* Tombol prev next */
+.btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.6);
+  color:#FFD700;
+  border:none;
+  padding:8px 12px;
+  cursor:pointer;
+  font-size:20px;
+  border-radius:50%;
+  font-weight:bold;
+}
+.btn:hover{background:rgba(255,215,0,0.9); color:#000}
+.prev{left:8px}
+.next{right:8px}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif}
+body{background:#000;color:#fff;padding-bottom:80px}
+
+/* HEADER */
+.header{background:linear-gradient(to bottom,#8B0000,#000);padding:12px 10px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
+.menu-icon{color:#FFD700;font-size:20px}
+.logo{background:#fff;color:#8B0000;padding:4px 10px;border-radius:20px;font-weight:bold;font-size:14px;display:flex;align-items:center;gap:5px}
+.btn-top{display:flex;gap:6px}
+.btn-login{background:transparent;border:2px solid #FFD700;color:#FFD700;padding:6px 16px;border-radius:8px;font-weight:bold;font-size:14px}
+.btn-daftar{background:linear-gradient(90deg,#FFA500,#FF8C00);color:#000;padding:6px 16px;border-radius:8px;font-weight:bold;border:none;font-size:14px}
+
+/* DOTS SLIDER */
+.dots-top{display:flex;gap:6px;justify-content:center;padding:8px 0}
+.dot-top{width:6px;height:6px;border-radius:50%;background:#333}
+.dot-top.active{background:#FFD700}
+
+/* TITLE SECTION */
+.section-title{display:flex;justify-content:space-between;align-items:center;padding:15px 10px}
+.section-title h3{font-size:14px;font-weight:bold}
+.btn-lihat{background:#111;border:1px solid #333;color:#ccc;padding:5px 12px;border-radius:20px;font-size:12px}
+
+/* KEMENANGAN BESAR */
+.win-wrapper{display:flex;gap:10px;overflow-x:auto;padding:0 10px;scroll-snap-type:x mandatory}
+.win-card{min-width:160px;background:linear-gradient(135deg,#8B0000,#FF0000);border-radius:12px;padding:8px;display:flex;gap:8px;scroll-snap-align:start}
+.win-card img{width:60px;height:60px;border-radius:8px;background:#fff}
+.win-info{font-size:12px}
+.win-info .name{color:#FFD700}
+.win-info .amount{font-weight:bold;font-size:14px;margin:3px 0}
+.win-info .game{font-size:11px;color:#ddd}
+.win-card .pg{position:absolute;margin-top:40px;margin-left:40px;background:#fff;color:#000;font-size:9px;font-weight:bold;padding:1px 4px;border-radius:3px}
+
+/* GAME POPULAR & RILIS BARU */
+.game-wrapper{display:flex;gap:10px;overflow-x:auto;padding:0 10px;scroll-snap-type:x mandatory}
+.game-card{min-width:120px;background:#1a1a1a;border-radius:10px;overflow:hidden;position:relative;scroll-snap-align:start}
+.game-card img{width:100%;height:140px;object-fit:cover}
+.game-rank{position:absolute;top:0;left:0;background:#FF0000;color:#fff;font-size:12px;font-weight:bold;padding:3px 8px;border-radius:0 0 8px 0}
+.game-hyper{position:absolute;top:0;left:0;background:orange;color:#000;font-size:9px;font-weight:bold;padding:2px 4px;border-radius:0 0 5px 0}
+.game-new{position:absolute;top:0;left:0;background:#00C853;color:#fff;font-size:10px;font-weight:bold;padding:3px 6px;border-radius:0 0 8px 0}
+.game-name{background:#8B0000;text-align:center;padding:8px 5px;font-size:12px}
+.game-player{position:absolute;bottom:40px;right:5px;background:rgba(0,0,0,0.7);padding:2px 5px;border-radius:10px;font-size:10px}
+.rtp-bar{background:linear-gradient(90deg,#00C853,#00E676);color:#000;font-size:11px;font-weight:bold;text-align:center;padding:4px;border-radius:20px;margin:5px;display:flex;justify-content:space-between;align-items:center}
+
+/* NAV BAWAH */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(to top,#8B0000,#5a0000);display:flex;justify-content:space-around;padding:8px 0;border-top:2px solid #FF0000;z-index:999}
+.nav-item{text-align:center;color:#ccc;font-size:10px;text-decoration:none;flex:1}
+.nav-item img{width:26px;display:block;margin:0 auto 3px;filter:brightness(0.7)}
+.nav-item.active{color:#FFD700}
+.nav-item.active img{filter:brightness(1.5) drop-shadow(0 0 5px #FFD700)}
+</style>
+</style>
+</head>
+<body>
+
+<!-- TOP BAR APLIKASI -->
+<div class="topbar">
+  <div class="topbar-left">
+    <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="">
+    <div>
+      <h3>APLIKASI KOPDESTOTO</h3>
+      <p>Kini telah tersedia di Google Play Store</p>
+    </div>
+  </div>
+  <div>
+    <button class="btn-download">⬇</button>
+    <button class="btn-close">✕</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">🏠 KOPDESTOTO</div>
+  <div class="btn-group">
+    <a href="login1.html" class="btn-login">LOGIN</a>
+    <a href="daftar1.html" class="btn-daftar">DAFTAR</a>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee"><span>🎉 SELAMAT DATANG DI KOPDESTOTO - SITUS TERPERCAYA NO.1 DI INDONESIA 🎉</span></div>
+
+<!-- SPIN HARIAN -->
+<div class="spin">
+  <img src="https://kopdestoto.com/lottery-flagship/assets/common/luckySpin.webp" alt="">
+  <h4>SPIN HARIAN</h4>
+</div>
+
+<!-- SEARCH -->
+<div class="search">
+  <input type="text" placeholder="🔍 Nama permainan | Penyedia">
+</div>
+
+<div class="slider">
+  <div class="slides" id="slides">    
+      
+    <!-- 15 SLIDE - GANTI LINK SESUAI FOTO KAMU -->
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/lYWh6wRNSBRGwB20QaYu.jpg?webp=true&width=660" alt="Banner 1"></div>
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/Q8rIMhPJelHRVUS7ehOe.jpg?webp=true&width=660" alt="Banner 2"></div>
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/25WXgILG2get5XDADaF2.jpg?webp=true&width=660" alt="Banner 3"></div>
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/HGhq3E4ua0Ijo2yviD0b.jpg?webp=true&width=660" alt="Banner 4"></div>
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/cUOqk2Zyo8LCQQtbVdu5.jpg?webp=true&width=660" alt="Banner 5"></div>
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/Q8rIMhPJelHRVUS7ehOe.jpg?webp=true&width=660" alt="Banner 6"></div>
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/lYWh6wRNSBRGwB20QaYu.jpg?webp=true&width=660" alt="Banner 7"></div>
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/wbzOuymx2SlmTRYThGnS.jpg?webp=true&width=660" alt="Banner 8"></div>
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/hMSZVuPtUV9O4HIDwUt6.jpg?webp=true&width=660" alt="Banner 9"></div>
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/JfOVtE5IXgob1fhJ6Hhy.jpg?webp=true&width=660" alt="Banner 10"></div>
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/Q8rIMhPJelHRVUS7ehOe.jpg?webp=true&width=660" alt="Banner 11"></div>
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/tT2HqKp4Svbt22d18g24.jpg?webp=true&width=660" alt="Banner 12"></div>
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/4xDR78jRECHjuJL8Or5O.jpg?webp=true&width=660" alt="Banner 13"></div>
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/qBgiii1Qg5c3MLJAWzBZ.png?webp=true&width=660" alt="Banner 14"></div>
+    <div class="slide"><img src="https://lbstatic.winwinwin168.net/media/images/rmERbHeg6a6n6xXDS9su.jpg?webp=true&width=660" alt="Banner 15"></div>
+
+  </div>
+
+  <button class="btn prev" onclick="prevSlide()">❮</button>
+  <button class="btn next" onclick="nextSlide()">❯</button>
+
+  <div class="dots" id="dots"></div>
+</div>
+
+<!-- KARTU PROMO -->
+<div class="promo-wrapper">
+  <div class="promo-card">
+    <h4>Turnamen Slot Pascal Gaming</h4>
+    <button class="btn-info">INFO LENGKAP</button>
+  </div>
+  <div class="promo-card" style="background:#1a1a1a">
+    <h4>MANCALA FRIDAY HAPPY HOURS</h4>
+    <button class="btn-info">INFO</button>
+  </div>
+</div>
+
+<div class="title">KEMENANGAN BESAR TERBARU</div>
+<div class="win-wrapper">
+  <div class="win-card">
+    <div style="position:relative">
+      <img src="https://lbstatic.winwinwin168.net/media/images/pgsoft/mahjong-ways.png?webp=true&width=140" alt="">
+      <span class="pg">PG</span>
+    </div>
+    <div class="win-info">
+      <div class="name">firda***</div>
+      <div class="amount">Rp 540,504,000</div>
+      <div class="game">Mahjong Ways</div>
+    </div>
+  </div>
+  <div class="win-card">
+    <div style="position:relative">
+      <img src="https://lstatic.winwinwin168.net/h6cP2LSd4nNjR1G5K5d0.png?webp=true&width=140" alt="">
+      <span class="pg">PG</span>
+    </div>
+    <div class="win-info">
+      <div class="name">rulee0***</div>
+      <div class="amount">Rp 461,171,000</div>
+      <div class="game">Wild Bounty Showdown</div>
+    </div>
+  </div>
+</div>
+
+<!-- GAME POPULAR -->
+<div class="section-title">
+  <h3>GAME POPULAR</h3>
+  <button class="btn-lihat">Lihat Semua</button>
+</div>
+<div class="game-wrapper">
+  <div class="game-card">
+    <img src="https://lstatic.winwinwin168.net/CEVwWlpG6rCSQ3HYEWfm.jpg?webp=true&width=220" alt="">
+    <div class="game-rank">1</div>
+    <div class="game-name">Fury ofu Anubis Gacor</div>
+  </div>
+  <div class="game-card">
+    <img src="https://lstatic.winwinwin168.net/2qNpedGNSR3GaLAA0LRg.png?webp=true&width=220" alt="">
+    <div class="game-hyper">HYPER PLAY</div>
+    <div class="game-rank">2</div>
+    <div class="game-name">Gates of Olympus 1000</div>
+  </div>
+  <div class="game-card">
+    <img src="https://lstatic.winwinwin168.net/O9WPtkp1HJHQCM0zeira.jpg?webp=true&width=220" alt="">
+    <div class="game-rank">3</div>
+    <div class="game-name">Mahjong Wins Triple Pot</div>
+  </div>
+</div>
+
+<!-- RILIS BARU -->
+<div class="section-title">
+  <h3>RILIS BARU</h3>
+  <button class="btn-lihat">Lihat Semua</button>
+</div>
+<div class="game-wrapper">
+  <div class="game-card">
+    <img src="https://lstatic.winwinwin168.net/3C9SNcy60Z14fVykAOXn.jpg?webp=true&width=220" alt="">
+    <div class="game-new">NEW</div>
+    <div class="game-player">👥 136</div>
+    <div class="game-name">Candy Rush Gacor juara</div>
+    <div class="rtp-bar">89.52% <span>i</span></div>
+  </div>
+  <div class="game-card">
+    <img src="https://lstatic.winwinwin168.net/u1XBZFtrFk9htQxVBLxw.png?webp=true&width=220" alt="">
+    <div class="game-new">NEW</div>
+    <div class="game-player">👥 1081</div>
+    <div class="game-name">Gates of Olympus 1000</div>
+    <div class="rtp-bar">94.07% <span>i</span></div>
+  </div>
+  <div class="game-card">
+    <img src="https://lstatic.winwinwin168.net/mbAwHfOSxl4p8yldl9cE.png?webp=true&width=220" alt="">
+    <div class="game-new">NEW</div>
+    <div class="game-name">Mahjong Wins Triple Pot</div>
+    <div class="rtp-bar">94.41% <span>i</span></div>
+  </div>
+</div>
+
+<div style="padding:15px 10px"><h3>PILIH PERMAINAN ANDA</h3></div>
+
+<!-- TARUH INI SEBELUM </body> -->
+<div class="bottom-nav">
+  <a href="index.html" class="nav-item active">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="">
+    <span>HOME</span>
+  </a>
+  <a href="promo.html" class="nav-item">
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="">
+    <span>PROMOSI</span>
+  </a>
+  <a href="login1.html" class="nav-item">
+    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="">
+    <span>LOGIN</span>
+  </a>
+  <a href="https://wa.me/+6281225531613" target="_blank" class="nav-item">
+    <img src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png" alt="">
+    <span>LIVE CHAT</span>
+  </a>
+</div>
+
+<style>
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#8B0000;
+  display:flex;
+  justify-content:space-around;
+  padding:8px 0 5px 0;
+  border-top:2px solid #FFD700;
+  z-index:999;
+}
+.nav-item{
+  text-align:center;
+  color:#fff;
+  font-size:10px;
+  text-decoration:none; /* penting biar gak ada garis bawah */
+  flex:1;
+}
+.nav-item img{
+  width:24px;
+  display:block;
+  margin:0 auto 3px;
+  filter:invert(1) brightness(1.5);
+}
+.nav-item.active{
+  color:#FFD700;
+}
+.nav-item.active img{
+  filter:invert(80%) sepia(100%) saturate(500%) hue-rotate(5deg); /* bikin kuning */
+}
+body{padding-bottom:70px} /* biar konten gak ketutup navbar */
+</style>
+
+  </div>
+</div>
+<script>
+let currentSlide = 0;
+const slides = document.getElementById('slides');
+const totalSlides = slides.children.length;
+const dotsContainer = document.getElementById('dots');
+
+// bikin dots otomatis 15
+for(let i=0; i<totalSlides; i++){
+  let dot = document.createElement('div');
+  dot.classList.add('dot');
+  dot.onclick = () => goToSlide(i);
+  dotsContainer.appendChild(dot);
+}
+const dots = document.querySelectorAll('.dot');
+
+function updateSlider(){
+  slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentSlide);
+  });
+}
+
+function nextSlide(){
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateSlider();
+}
+
+function prevSlide(){
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateSlider();
+}
+
+function goToSlide(n){
+  currentSlide = n;
+  updateSlider();
+}
+
+// Auto slide tiap 3 detik
+setInterval(nextSlide, 3000);
+
+updateSlider(); 
+</script>
+
+</body>
+</html>
