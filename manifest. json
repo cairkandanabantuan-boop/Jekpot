@@ -1,0 +1,9 @@
+{
+  "name": "Jekpot",
+  "short_name": "Jekpot",
+  "start_url": "/Jekpot/",
+  "display": "standalone",
+  "background_color": "#000",
+  "theme_color": "#ff0000",
+  "icons": []
+}
